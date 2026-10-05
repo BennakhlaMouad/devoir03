@@ -1,0 +1,41 @@
+<h2>Ajouter un Produit</h2>
+
+<form>
+
+  <div>
+    <label>ID :</label>
+    <input
+      type="number"
+      [(ngModel)]="newProduit.id"
+      name="id">
+  </div>
+
+  <div>
+    <label>Nom :</label>
+    <input
+      type="text"
+      [(ngModel)]="newProduit.nom"
+      name="nom">
+  </div>
+
+  <div>
+    <label>Prix :</label>
+    <input
+      type="number"
+      [(ngModel)]="newProduit.prix"
+      name="prix">
+  </div>
+
+  <div>
+    <label>Marque :</label>
+    <input
+      type="text"
+      [(ngModel)]="newProduit.marque"
+      name="marque">
+  </div>
+
+  <button type="button" (click)="ajouterProduit()">
+    Ajouter
+  </button>
+
+</form>

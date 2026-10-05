@@ -1,0 +1,83 @@
+<h2>Liste des Produits</h2>
+
+<table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Marque</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    @for (p of produits; track p.id) {
+
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.nom }}</td>
+        <td>{{ p.prix }} DT</td>
+        <td>{{ p.marque }}</td>
+      
+       <td>
+         <button class="btn btn-warning" (click)="modifierProduit(p)">
+          Modifier
+         </button>
+ 
+        </td>
+        <td>
+         <button class="btn btn-danger" (click)="supprimerProduit(p)">
+          Supprimer
+         </button>
+        </td>
+      </tr>
+
+    }
+
+  </tbody>
+
+</table>
+
+@if (produitSelectionne) {
+  <h2>Modifier le Produit</h2>
+
+  <div>
+    <label>ID :</label>
+    <input
+      type="number"
+      [(ngModel)]="produitSelectionne.id"
+      name="editId">
+  </div>
+
+  <div>
+    <label>Nom :</label>
+    <input
+      type="text"
+      [(ngModel)]="produitSelectionne.nom"
+      name="editNom">
+  </div>
+
+  <div>
+    <label>Prix :</label>
+    <input
+      type="number"
+      [(ngModel)]="produitSelectionne.prix"
+      name="editPrix">
+  </div>
+
+  <div>
+    <label>Marque :</label>
+    <input
+      type="text"
+      [(ngModel)]="produitSelectionne.marque"
+      name="editMarque">
+  </div>
+  <button
+  class="btn btn-success"
+  (click)="enregistrerModification()">
+  Enregistrer
+  </button>
+
+}
